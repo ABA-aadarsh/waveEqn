@@ -6,16 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wave Equation</title>
     <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
         body{
             background-color: black;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: center;
+            overflow: hidden;
         }
         canvas{
             background-color: white;
         }
+        .main{
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .control{
+            position: absolute;
+            top:50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .control div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 270px;
+        }
     </style>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
+    <div class="main">
+        <canvas id="canvas"></canvas>
+        <div class="control">
+            <div>
+                <span>Amplitude</span>
+                <input type="range" min="10" max="100" value="25" id="a" class="controllers">
+            </div>
+            <div>
+                <span>Time Period</span>
+                <input type="range" min="1" max="12" value="6" id="T" class="controllers">
+            </div>
+            <div>
+                <span>Wave Length</span>
+                <input type="range" min="80" max="300" value="100" id="l" class="controllers">
+            </div>
+        </div>
+    </div>
     <script src="./canvas.js"></script>
 </body>
 </html>
